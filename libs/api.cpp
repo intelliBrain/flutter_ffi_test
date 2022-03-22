@@ -12,12 +12,22 @@ static char buffer[1024];
 EXPORT
 int add(int a, int b)
 {
-    return a + b;
+  return a + b;
 }
 
 EXPORT
-char* capitalize(char *str) {
-    strcpy(buffer, str);
-    buffer[0] = toupper(buffer[0]);
-    return buffer;
+char *capitalize(char *str)
+{
+  if (str != NULL)
+  {
+    size_t len = strlen(str);
+    strcpy_s(buffer, str);
+
+    for (int i = 0; i < len; i++)
+    {
+      buffer[i] = toupper(buffer[i]);
+    }
+  }
+
+  return buffer;
 }
