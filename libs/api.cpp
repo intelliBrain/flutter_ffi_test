@@ -21,7 +21,7 @@ char *capitalize(char *str)
   if (str != NULL)
   {
     size_t len = strlen(str);
-    strcpy_s(buffer, str);
+    strcpy(buffer, str);
 
     for (int i = 0; i < len; i++)
     {
